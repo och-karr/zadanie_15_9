@@ -1,8 +1,3 @@
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
-
 class App extends React.Component {
     constructor() {
         super();
@@ -50,21 +45,25 @@ class UsersList extends React.Component {
 
     render() {
         return (
-        <div>
+        <div className={'all-users'}>
             {this.users}
         </div>
         );
     }
 }
 
-
 class User extends React.Component {
     render() {
         return (
             <div>
-                <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/>
+                <img src={this.props.user.avatar_url} className={'one-user'}/>
                 <a href={this.props.user.html_url} target="_blank">{this.props.user.login}</a>
             </div>
         );
     }
 }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
